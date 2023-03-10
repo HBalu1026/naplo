@@ -1,0 +1,100 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               FontSize="20">Név:</Label>
+        <TextBox x:Name="txtNev" 
+                 Grid.Column="1"
+                 Margin="30px, 10px"/>
+        <Label Grid.Row="1"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               FontSize="20">Tantárgy</Label>
+        <ComboBox x:Name="cboTantargy"
+                  Grid.Column="1"
+                  Grid.Row="1"
+                  SelectedIndex="0"
+                  Margin="30px, 10px">
+            <ComboBoxItem  VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontSize="20"></ComboBoxItem>
+            <ComboBoxItem  VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontSize="20">Angol</ComboBoxItem>
+            <ComboBoxItem  VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontSize="20">Fizika</ComboBoxItem>
+            <ComboBoxItem  VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontSize="20">Matek</ComboBoxItem>
+            <ComboBoxItem  VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontSize="20">Tesi</ComboBoxItem>
+        </ComboBox>
+        <Label Grid.Row="2"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               FontSize="20">Dátum</Label>
+        <DatePicker x:Name="dpDaum" 
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="3"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+            <Label FontSize="20">Jegy</Label>
+            <Label x:Name="lbJegy"
+                   FontSize="20"
+                   Content="{Binding ElementName=sliJegy, Path=Value}"
+                   Foreground="Red"
+                   FontWeight="DemiBold"></Label>
+        </StackPanel>
+        <Slider x:Name="sliJegy"
+                Grid.Column="1"
+                Grid.Row="3"
+                Minimum="1"
+                Maximum="5"
+                Value="3"
+                TickFrequency="1"
+                IsSnapToTickEnabled="True"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center" 
+                Width="200"/>
+        <Button x:Name="btnBetolt"
+                Grid.Row="4"
+                FontSize="20"
+                Margin="10px">Napló betőltése</Button>
+        <Button x:Name="btnRogzit"
+                Grid.Column="1"
+                Grid.Row="4"
+                FontSize="20"
+                Margin="10px">Rögzít naplóba</Button>
+        <ListBox Grid.Row="5"
+                 Grid.ColumnSpan="2"
+                 Background="LightGreen"></ListBox>
+
+
+    </Grid>
+</Window>
